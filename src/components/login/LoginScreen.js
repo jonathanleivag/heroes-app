@@ -1,13 +1,27 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../../auth/AuthContext'
+import { types } from '../../types/types';
 
 export const LoginScreen = ({ history: { replace } }) => {
+
+    const { dispatch } = useContext(AuthContext);
+    const handlerLogin = () => {
+        dispatch({
+            type: types.login,
+            payload: {
+                name: 'Jonathan'
+            }
+        })
+        replace('/')
+    }
+
     return (
         <section className='container mt-5'>
             <h1>Login</h1>
             <hr />
             <button
                 className='btn btn-outline-success'
-                onClick={() => replace('/')}
+                onClick={handlerLogin}
             >
                 Login
             </button>
