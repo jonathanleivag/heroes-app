@@ -10,8 +10,8 @@ import { Navbar } from '../components/ui/NavBar'
 export const DashboardRouter = () => {
     return (
         <Fragment>
-            <div>
-                <Navbar />
+            <Navbar />
+            <div className='container mt-5'>
                 <Switch>
                     <Route exact path='/marvel' component={MarvelScreen} />
                     <Route exact path='/heroe/:heroeId' component={HeroScreen} />
